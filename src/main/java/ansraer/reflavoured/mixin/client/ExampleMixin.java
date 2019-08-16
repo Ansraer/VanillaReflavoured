@@ -1,4 +1,4 @@
-package ansraer.reflavoured.mixin.common;
+package ansraer.reflavoured.mixin.client;
 
 import net.minecraft.client.MinecraftClient;
 import org.spongepowered.asm.mixin.Mixin;

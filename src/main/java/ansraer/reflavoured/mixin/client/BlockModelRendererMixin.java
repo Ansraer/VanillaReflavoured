@@ -25,17 +25,15 @@ import java.util.Random;
 @Mixin(BlockModelRenderer.class)
 public abstract class BlockModelRendererMixin implements BlockModelAvgBrightnessRenderer {
 
+
     @Shadow
-    abstract void tesselateQuadsFlat(ExtendedBlockView extendedBlockView_1, BlockState blockState_1, BlockPos blockPos_1, int int_1, boolean boolean_1, BufferBuilder bufferBuilder_1, List<BakedQuad> list_1, BitSet bitSet_1);
-    
-    updateShape()
+    abstract void updateShape(ExtendedBlockView extendedBlockView_1, BlockState blockState_1, BlockPos blockPos_1, int[] ints_1, Direction direction_1, float[] floats_1, BitSet bitSet_1);
 
     @Override
     public boolean tesselateFlatMaxBrightness(ExtendedBlockView extendedBlockView_1, BakedModel bakedModel_1, BlockState blockState_1, BlockPos blockPos_1, BufferBuilder bufferBuilder_1, boolean boolean_1, Random random_1, long long_1) {
         boolean boolean_2 = false;
         BitSet bitSet_1 = new BitSet(3);
         Direction[] var12 = Direction.values();
-        int var13 = var12.length;
 
         int[] surroundingBrightnesses = {
                 blockState_1.getBlockBrightness(extendedBlockView_1, blockPos_1.offset(Direction.UP)),
@@ -48,12 +46,12 @@ public abstract class BlockModelRendererMixin implements BlockModelAvgBrightness
         int brightness = (int) Arrays.stream(surroundingBrightnesses).max().orElse(0);
 
 
-        for(int var14 = 0; var14 < var13; ++var14) {
+        for(int var14 = 0; var14 < Direction.values().length; ++var14) {
             Direction direction_1 = var12[var14];
             random_1.setSeed(long_1);
             List<BakedQuad> list_1 = bakedModel_1.getQuads(blockState_1, direction_1, random_1);
             if (!list_1.isEmpty() && (!boolean_1 || Block.shouldDrawSide(blockState_1, extendedBlockView_1, blockPos_1, direction_1))) {
-                this.tesselateQuadsFlat(extendedBlockView_1, blockState_1, blockPos_1, brightness, false, bufferBuilder_1, list_1, bitSet_1);
+                this.tesselateQuadsFlatUnshaded(extendedBlockView_1, blockState_1, blockPos_1, brightness, bufferBuilder_1, list_1, bitSet_1);
                 boolean_2 = true;
             }
         }
@@ -61,14 +59,15 @@ public abstract class BlockModelRendererMixin implements BlockModelAvgBrightness
         random_1.setSeed(long_1);
         List<BakedQuad> list_2 = bakedModel_1.getQuads(blockState_1, (Direction)null, random_1);
         if (!list_2.isEmpty()) {
-            this.tesselateQuadsFlat(extendedBlockView_1, blockState_1, blockPos_1, -1, true, bufferBuilder_1, list_2, bitSet_1);
+            System.out.println("drawing some with -1");
+            this.tesselateQuadsFlatUnshaded(extendedBlockView_1, blockState_1, blockPos_1, -1, bufferBuilder_1, list_2, bitSet_1);
             boolean_2 = true;
         }
 
         return boolean_2;
     }
 
-    private void tesselateQuadsFlatUnshaded(ExtendedBlockView extendedBlockView_1, BlockState blockState_1, BlockPos blockPos_1, int int_1, boolean boolean_1, BufferBuilder bufferBuilder_1, List<BakedQuad> list_1, BitSet bitSet_1) {
+    private void tesselateQuadsFlatUnshaded(ExtendedBlockView extendedBlockView_1, BlockState blockState_1, BlockPos blockPos_1, int int_1, BufferBuilder bufferBuilder_1, List<BakedQuad> list_1, BitSet bitSet_1) {
         Vec3d vec3d_1 = blockState_1.getOffsetPos(extendedBlockView_1, blockPos_1);
         double double_1 = (double)blockPos_1.getX() + vec3d_1.x;
         double double_2 = (double)blockPos_1.getY() + vec3d_1.y;
@@ -77,11 +76,7 @@ public abstract class BlockModelRendererMixin implements BlockModelAvgBrightness
 
         for(int int_3 = list_1.size(); int_2 < int_3; ++int_2) {
             BakedQuad bakedQuad_1 = (BakedQuad)list_1.get(int_2);
-            if (boolean_1) {
-                this.updateShape(extendedBlockView_1, blockState_1, blockPos_1, bakedQuad_1.getVertexData(), bakedQuad_1.getFace(), (float[])null, bitSet_1);
-                BlockPos blockPos_2 = bitSet_1.get(0) ? blockPos_1.offset(bakedQuad_1.getFace()) : blockPos_1;
-                int_1 = blockState_1.getBlockBrightness(extendedBlockView_1, blockPos_2);
-            }
+
 
             bufferBuilder_1.putVertexData(bakedQuad_1.getVertexData());
             bufferBuilder_1.brightness(int_1, int_1, int_1, int_1);

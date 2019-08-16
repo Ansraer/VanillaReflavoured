@@ -1,17 +1,12 @@
-package ansraer.reflavoured.common.items;
+package ansraer.reflavoured.common.item;
 
 import ansraer.reflavoured.VanillaReflavoured;
 import net.minecraft.block.MaterialColor;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.FoodComponent;
-import net.minecraft.item.FoodComponents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-
-import java.lang.reflect.Field;
 
 public class ReflavouredItems {
 

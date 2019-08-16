@@ -1,4 +1,4 @@
-package ansraer.reflavoured.common.items;
+package ansraer.reflavoured.common.item;
 
 import ansraer.reflavoured.common.config.ReflavouredConfig;
 import net.fabricmc.api.EnvType;
@@ -6,9 +6,7 @@ import net.fabricmc.api.Environment;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.MaterialColor;
 import net.minecraft.client.resource.language.I18n;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.nbt.CompoundTag;
@@ -21,7 +19,6 @@ import net.minecraft.util.DefaultedList;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 

@@ -5,9 +5,9 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
 
 
-public class ConcreteBlockEntity extends BlockEntity {
+public class ConcreteMixerBlockEntity extends BlockEntity {
 
-    public ConcreteBlockEntity() {
+    public ConcreteMixerBlockEntity() {
         super(ReflavouredBlocks.CONCRETE_MIXER_BLOCK_ENTITY);
     }
 }
