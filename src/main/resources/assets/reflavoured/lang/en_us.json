@@ -1,0 +1,31 @@
+{
+  "text.autoconfig.reflavoured.title": "Vanilla Reflavoured Config",
+  "text.autoconfig.reflavoured.category.default": "General",
+  "text.autoconfig.reflavoured.option.forceSmokerRecipes": "Force Smoker",
+  "text.autoconfig.reflavoured.option.forceSmokerRecipes.@Tooltip": "Meat can no longer be cooked in the furnace",
+  "text.autoconfig.reflavoured.option.showAllPainterColors": "Show all Painter Colors",
+  "text.autoconfig.reflavoured.option.showAllPainterColors.@Tooltip": "Show all Painter Color Variations in the Creative Tab",
+
+  "color.reflavoured.white": "White",
+  "color.reflavoured.orange": "Orange",
+  "color.reflavoured.magenta": "Magenta",
+  "color.reflavoured.light_blue": "Light Blue",
+  "color.reflavoured.yellow": "Yellow",
+  "color.reflavoured.lime": "Lime",
+  "color.reflavoured.pink": "Pink",
+  "color.reflavoured.gray": "Gray",
+  "color.reflavoured.light_gray": "Light Gray",
+  "color.reflavoured.cyan": "Cyan",
+  "color.reflavoured.purple": "Purple",
+  "color.reflavoured.blue": "Blue",
+  "color.reflavoured.brown": "Brown",
+  "color.reflavoured.green": "Green",
+  "color.reflavoured.red": "Red",
+  "color.reflavoured.black": "Black",
+
+  "item.reflavoured.smoked_flesh" : "Smoked Flesh",
+
+  "item.reflavoured.wooden_painter" : "Wooden Painter",
+  "item.reflavoured.iron_painter" : "Iron Painter",
+  "item.reflavoured.golden_painter" : "Golden Painter"
+}

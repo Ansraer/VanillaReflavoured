@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "reflavoured",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Vanilla Reflavoured",
+  "description": "A mod that aims to improve Minecraft and adds a few basic items to enhance the gameplay without overhauling it completely",
   "authors": [
-    "Me!"
+    "Ansraer"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
@@ -19,11 +19,18 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "ansraer.reflavoured.VanillaReflavoured"
+    ],
+    "client": [
+      "ansraer.reflavoured.VanillaReflavouredClient"
+    ],
+    "modmenu": [
+      "ansraer.reflavoured.VanillaReflavouredClient"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "reflavoured.client.mixins.json",
+    "reflavoured.common.mixins.json"
   ],
 
   "depends": {

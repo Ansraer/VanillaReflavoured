@@ -1,11 +1,8 @@
 {
   "required": true,
-  "package": "net.fabricmc.example.mixin",
+  "package": "ansraer.reflavoured.mixin.common",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-  ],
-  "client": [
-    "ExampleMixin"
   ],
   "injectors": {
     "defaultRequire": 1

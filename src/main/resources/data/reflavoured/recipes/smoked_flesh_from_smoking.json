@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {
+    "item": "minecraft:rotten_flesh"
+  },
+  "result": "reflavoured:smoked_flesh",
+  "experience": 0.25,
+  "cookingtime": 90
+}

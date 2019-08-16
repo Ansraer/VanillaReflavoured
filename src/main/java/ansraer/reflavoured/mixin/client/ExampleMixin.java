@@ -1,4 +1,4 @@
-package net.fabricmc.example.mixin;
+package ansraer.reflavoured.mixin.common;
 
 import net.minecraft.client.MinecraftClient;
 import org.spongepowered.asm.mixin.Mixin;
@@ -10,6 +10,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class ExampleMixin {
 	@Inject(at = @At("HEAD"), method = "init()V")
 	private void init(CallbackInfo info) {
-		System.out.println("This line is printed by an example mod mixin!");
+		System.out.println("This line is printed by reflavoured's common mixin!");
 	}
 }

@@ -1,0 +1,8 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "reflavoured:item/painter_base",
+        "layer1": "reflavoured:item/painter_grip",
+        "layer2": "reflavoured:item/painter_brush"
+    }
+}

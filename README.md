@@ -1,16 +1,14 @@
-# Fabric Example Mod
+# vanilla Reflavoured Mod
 
-## Setup
+## About this Mod
 
-1. Edit build.gradle and mod.json to suit your needs.
-    * The "mixins" object can be removed from mod.json if you do not need to use mixins.
-    * Please replace all occurences of "modid" with your own mod ID - sometimes, a different string may also suffice.
-2. Run the following command:
+This mod aims to improve minecraft and adds a few basic items to enhance the gameplay without overhauling it completely.
+All additions and/or changes can be enabled and disabled in the options.
 
-```
-./gradlew idea
-```
+*   Added smoked flesh: rotten flash can be cooked in the smoker to remove the hunger debuff.
+*   Added painter: A simple item that can change the color of concrete and wool blocks
+
 
 ## License
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+This template is available under the MIT license.
